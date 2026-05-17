@@ -69,37 +69,45 @@ The implementation focuses on compiler construction, bytecode execution, and vir
 
 ---
 
-# Project Structure
+# Repository Structure
 
 ```text
-    cvmpp/
-    │
-    ├── Makefile
-    ├── main.cpp
-    │
-    ├── token.hpp
-    ├── value.hpp
-    │
-    ├── lexer.hpp
-    ├── lexer.cpp
-    │
-    ├── ast.hpp
-    │
-    ├── parser.hpp
-    ├── parser.cpp
-    │
-    ├── chunk.hpp
-    │
-    ├── compiler.hpp
-    ├── compiler.cpp
-    │
-    ├── debug.hpp
-    │
-    ├── vm.hpp
-    ├── vm.cpp
-    │
-    ├── calculator.cvm
-    └── truth.cvm
+CVM++/
+│
+├── .gitignore
+├── CMakeLists.txt
+├── Makefile
+│
+├── README.md
+├── README.txt
+├── report.pdf
+│
+├── main.cpp
+│
+├── token.hpp
+├── value.hpp
+│
+├── lexer.hpp
+├── lexer.cpp
+│
+├── ast.hpp
+│
+├── parser.hpp
+├── parser.cpp
+│
+├── chunk.hpp
+│
+├── compiler.hpp
+├── compiler.cpp
+│
+├── debug.hpp
+│
+├── vm.hpp
+├── vm.cpp
+│
+├── calculator.cvm
+├── truth.cvm
+
 ```
 
 ---
@@ -107,8 +115,9 @@ The implementation focuses on compiler construction, bytecode execution, and vir
 # Technologies Used
 
 - C++
-- C++17 Standard
+- C++17
 - Makefile Build System
+- CMake
 - Stack-Based Virtual Machine Architecture
 
 ---
@@ -123,24 +132,22 @@ The implementation focuses on compiler construction, bytecode execution, and vir
 
 ---
 
-## Build Steps
-
-### Navigate to the source directory
-
-```bash
-cd cvmpp
-```
-
-### Build the project
+## Build Using Makefile
 
 ```bash
 mingw32-make
 ```
 
-This generates:
+---
 
-```text
-cvmpp.exe
+## Build Using CMake
+
+```bash
+mkdir build
+cd build
+
+cmake ..
+cmake --build .
 ```
 
 ---
@@ -246,8 +253,6 @@ print a<b;
 print a==b;
 ```
 
----
-
 ### Example
 
 #### Input
@@ -263,6 +268,8 @@ print a==b;
 true
 false
 ```
+
+---
 
 # Compiler Pipeline
 
