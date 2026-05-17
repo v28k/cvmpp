@@ -7,9 +7,9 @@
 
 ## Team Members
 
-- **Venu K**
-- **NSDNV Manjunadh**
-- **P Srinadh**
+- Venu K
+- NSDNV Manjunadh
+- P Srinadh
 
 ---
 
@@ -37,7 +37,7 @@ Stack-Based Virtual Machine
 Program Output
 ```
 
-The implementation focuses on clean compiler architecture, bytecode execution, and virtual machine design.
+The implementation focuses on compiler construction, bytecode execution, and virtual machine design.
 
 ---
 
@@ -48,14 +48,8 @@ The implementation focuses on clean compiler architecture, bytecode execution, a
 - Integer values
 - Boolean values
 - Variables and assignment
-- Arithmetic operations
-  - `+`
-  - `-`
-  - `*`
-  - `/`
-- Comparison operations
-  - `==`
-  - `<`
+- Arithmetic operations (`+`, `-`, `*`, `/`)
+- Comparison operations (`==`, `<`)
 - `if / else`
 - `while` loops
 - Dynamic runtime input using `input`
@@ -65,7 +59,7 @@ The implementation focuses on clean compiler architecture, bytecode execution, a
 
 ## Compiler Features
 
-- Lexical Analysis (Lexer)
+- Lexical Analysis
 - Recursive Descent Parsing
 - Abstract Syntax Tree (AST)
 - Bytecode Generation
@@ -82,7 +76,6 @@ CVM++/
 │
 ├── README.md
 ├── report.pdf
-├── DEMO.mp4
 │
 └── cvmpp/
     │
@@ -111,7 +104,6 @@ CVM++/
     ├── vm.cpp
     │
     ├── calculator.cvm
-    ├── compare.cvm
     └── truth.cvm
 ```
 
@@ -119,10 +111,10 @@ CVM++/
 
 # Technologies Used
 
-- **Language:** C++
-- **Compiler Standard:** C++17
-- **Build Tool:** Makefile
-- **Execution Model:** Stack-Based Virtual Machine
+- C++
+- C++17 Standard
+- Makefile Build System
+- Stack-Based Virtual Machine Architecture
 
 ---
 
@@ -130,7 +122,7 @@ CVM++/
 
 ## Requirements
 
-- MSYS2 UCRT64 Environment (Windows)
+- MSYS2 UCRT64 Environment
 - `g++`
 - `mingw32-make`
 
@@ -138,15 +130,13 @@ CVM++/
 
 ## Build Steps
 
-### 1. Open MSYS2 UCRT64 terminal
-
-### 2. Navigate to project folder
+### Navigate to the source directory
 
 ```bash
-cd /c/Users/YourName/Desktop/CVM++/cvmpp
+cd cvmpp
 ```
 
-### 3. Build the project
+### Build the project
 
 ```bash
 mingw32-make
@@ -242,13 +232,26 @@ Second Number
 
 ---
 
-## 2. Comparison Program
+## 2. Truth Program
 
-### `compare.cvm`
+### `truth.cvm`
 
 Demonstrates:
+- Dynamic input
 - Boolean output
 - Comparison operations
+
+### Source
+
+```text
+let a=input;
+let b=input;
+
+print a<b;
+print a==b;
+```
+
+---
 
 ### Example
 
@@ -266,35 +269,7 @@ true
 false
 ```
 
----
-
-## 3. Truth Machine
-
-### `truth.cvm`
-
-Demonstrates:
-- Conditional execution
-- Boolean logic
-
-### Example
-
-#### Input
-
-```text
-0
-```
-
-#### Output
-
-```text
-0
-```
-
----
-
 # Compiler Pipeline
-
----
 
 ## 1. Lexical Analysis
 
@@ -317,23 +292,6 @@ LET IDENTIFIER EQUAL NUMBER SEMICOLON
 ## 2. Parsing
 
 The recursive descent parser converts tokens into an Abstract Syntax Tree (AST).
-
-Example:
-
-```text
-print 2+3*4;
-```
-
-becomes:
-
-```text
-PrintStmt
- └── BinaryExpr(+)
-     ├── Literal(2)
-     └── BinaryExpr(*)
-         ├── Literal(3)
-         └── Literal(4)
-```
 
 ---
 
@@ -436,12 +394,6 @@ IP=3 OP=DEFINE_GLOBAL STACK=[10]
 IP=6 OP=GET_GLOBAL STACK=[]
 ```
 
-Trace mode helps debug:
-- Stack behavior
-- Bytecode execution
-- Control flow
-- Runtime operations
-
 ---
 
 # Concepts Used
@@ -463,11 +415,11 @@ This project combines concepts from:
 
 Through this project we learned:
 
-- Designing a programming language grammar
-- Implementing a recursive descent parser
+- Designing language grammars
+- Implementing recursive descent parsers
 - Building AST structures
-- Generating bytecode instructions
-- Implementing a stack-based virtual machine
+- Generating bytecode
+- Implementing stack-based virtual machines
 - Managing runtime execution
 - Implementing control flow using jumps
 - Building debugging infrastructure for VMs
@@ -481,26 +433,24 @@ Potential future extensions include:
 - String literals
 - Functions and recursion
 - Local variable scopes
-- Arrays and objects
-- REPL (interactive shell)
+- REPL support
 - Compiler optimizations
-- Garbage collection
 - Better error reporting
 
 ---
 
 # References
 
-- *Crafting Interpreters* — Robert Nystrom
+- Crafting Interpreters — Robert Nystrom
 - Compiler Design lecture materials
+- Recursive Descent Parsing references
 - Virtual Machine architecture references
-- Recursive Descent Parsing tutorials
 
 ---
 
 # Conclusion
 
-CVM++ demonstrates the complete implementation of a small programming language and bytecode virtual machine in C++.
+CVM++ demonstrates the implementation of a complete bytecode-based programming language and virtual machine in C++.
 
 The project integrates concepts from:
 - compiler construction,
@@ -508,17 +458,4 @@ The project integrates concepts from:
 - runtime systems,
 - and computer architecture
 
-into a clean and modular language runtime system.
-
----
-
-# Demo
-
-The repository includes:
-
-- `DEMO.mp4`
-- sample `.cvm` programs
-- complete source code
-- report documentation
-
----
+into a clean and modular execution system.
