@@ -72,12 +72,7 @@ The implementation focuses on compiler construction, bytecode execution, and vir
 # Project Structure
 
 ```text
-CVM++/
-│
-├── README.md
-├── report.pdf
-│
-└── cvmpp/
+    cvmpp/
     │
     ├── Makefile
     ├── main.cpp
@@ -436,15 +431,6 @@ Potential future extensions include:
 - REPL support
 - Compiler optimizations
 - Better error reporting
-
----
-
-# References
-
-- Crafting Interpreters — Robert Nystrom
-- Compiler Design lecture materials
-- Recursive Descent Parsing references
-- Virtual Machine architecture references
 
 ---
 
